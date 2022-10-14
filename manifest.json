@@ -1,7 +1,7 @@
 {
   "vendor": "vtexarg",
   "name": "fixed-prices-app",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "title": "Fixed prices app",
   "description": "Fixed prices app",
   "builders": {
