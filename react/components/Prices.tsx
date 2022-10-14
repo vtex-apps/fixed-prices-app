@@ -24,7 +24,7 @@ function Prices() {
   const selectedItem = productContextValue?.selectedItem?.itemId || "";
 
   // CHANGE_HERE your table name
-  const tableName = '2';
+  const tableName = 'YOUR_TABLE_NAME_HERE';
 
   const { data, loading, error } = useQuery<queryData, queryOpt>(getFixedPrice, {
     variables: {
@@ -45,7 +45,8 @@ function Prices() {
       }
     }
   }
-
+  
+  // Customize the information to be displayed on the front here:
   return <div>
             <p>SkuId: {selectedItem}</p>
             <p>Fixed price: {data?.getFixedPrice[0].value}</p>
