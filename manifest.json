@@ -1,9 +1,9 @@
 {
   "vendor": "vtexarg",
-  "name": "fixed-prices-app",
+  "name": "fixed-app",
   "version": "1.0.1",
-  "title": "Fixed prices app",
-  "description": "Fixed prices app",
+  "title": "Fixed app",
+  "description": "Fixed app",
   "builders": {
     "react": "3.x",
     "messages": "1.x",
