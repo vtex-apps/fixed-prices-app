@@ -21,6 +21,15 @@
     "smartcheckout"
   ],
   "credentialType": "absolute",
+  "billingOptions": {
+    "support": {
+      "url": "https://support.vtex.com/hc/requests"
+    },
+    "type": "free",
+    "availableCountries": [
+      "*"
+    ]
+  },
   "policies": [
     {
       "name": "colossus-fire-event"
