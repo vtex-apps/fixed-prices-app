@@ -1,7 +1,7 @@
 {
   "vendor": "vtexarg",
   "name": "fixed-app",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "title": "Fixed app",
   "description": "Fixed app",
   "builders": {
