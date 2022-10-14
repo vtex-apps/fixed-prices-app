@@ -1,11 +1,11 @@
-import type { ClientsConfig, ServiceContext, RecorderState } from '@vtex/api'
+import type { ClientsConfig, ServiceContext } from '@vtex/api'
 import { LRUCache, method, Service } from '@vtex/api'
-
 import { Clients } from './clients'
-import { status } from './middlewares/status'
-import { validate } from './middlewares/validate'
+import { getPrices } from './middlewares/getPrices'
+import { getFixedPrice } from './resolvers/fixedprices'
 
-const TIMEOUT_MS = 800
+
+const TIMEOUT_MS = 2000
 
 // Create a LRU memory cache for the Status client.
 // The @vtex/api HttpClient respects Cache-Control headers and uses the provided cache.
@@ -24,7 +24,7 @@ const clients: ClientsConfig<Clients> = {
       timeout: TIMEOUT_MS,
     },
     // This key will be merged with the default options and add this cache to our Status client.
-    status: {
+    demo: {
       memoryCache,
     },
   },
@@ -32,12 +32,7 @@ const clients: ClientsConfig<Clients> = {
 
 declare global {
   // We declare a global Context type just to avoid re-writing ServiceContext<Clients, State> in every handler and resolver
-  type Context = ServiceContext<Clients, State>
-
-  // The shape of our State object found in `ctx.state`. This is used as state bag to communicate between middlewares.
-  interface State extends RecorderState {
-    code: number
-  }
+  type Context = ServiceContext<Clients>
 }
 
 // Export a service that defines route handlers and client options.
@@ -45,8 +40,16 @@ export default new Service({
   clients,
   routes: {
     // `status` is the route ID from service.json. It maps to an array of middlewares (or a single handler).
-    status: method({
-      GET: [validate, status],
+
+    prices: method({
+      GET: [getPrices],
     }),
   },
+  graphql: {
+    resolvers: {
+      Query: {
+        getFixedPrice
+      }
+    }
+  }
 })

@@ -1,0 +1,9 @@
+query test($skuId: String!, $tableName: String!){
+  getFixedPrice(skuId: $skuId, tableName: $tableName)
+  @context(provider: "vtexarg.fixed-app"){
+    tradePolicyId
+    value
+    listPrice
+    minQuantity
+  }
+}

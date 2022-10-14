@@ -1,13 +1,14 @@
 {
-  "memory": 256,
+  "memory": 512,
   "ttl": 10,
-  "timeout": 2,
+  "timeout": 200,
   "minReplicas": 2,
   "maxReplicas": 4,
-  "workers": 1,
+  "workers": 2,
   "routes": {
-    "status": {
-      "path": "/_v/status/:code",
+    
+    "prices": {
+      "path": "/v0/demo/prices/:itemId/:priceTableId",
       "public": true
     }
   }
