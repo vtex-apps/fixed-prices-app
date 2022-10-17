@@ -1,6 +1,9 @@
-📢 Use this project, [contribute](https://github.com/{OrganizationName}/{AppName}) to it or open issues to help evolve it using [Store Discussion](https://github.com/vtex-apps/store-discussion).
+##  ⚠️ Maintenance ⚠️
+*Starting September 1st 2022, this application will no longer be maintained by VTEX. Code is released for free under the GNU/PL Agreement for you to use and modify at your convenience. The VTEX repository shall remain unchanged with the original version.*
 
-# APP NAME
+---
+
+# Fixed prices app
 
 <!-- DOCS-IGNORE:start -->
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
