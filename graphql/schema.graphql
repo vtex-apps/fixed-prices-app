@@ -1,7 +1,7 @@
 type Pricelist {
     tradePolicyId: String,
-    value: Int,
-    listPrice: Int,
+    value: Float,
+    listPrice: Float,
     minQuantity: Int
 }
 
