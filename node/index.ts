@@ -39,8 +39,7 @@ declare global {
 export default new Service({
   clients,
   routes: {
-    // `status` is the route ID from service.json. It maps to an array of middlewares (or a single handler).
-
+    // `prices` is the route ID from service.json. It maps to an array of middlewares (or a single handler).
     prices: method({
       GET: [getPrices],
     }),
